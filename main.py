@@ -2,38 +2,55 @@ from random import randint
 
 
 def attack(char_name: str, char_class: str) -> str:
-
+    """Это строка документирования."""
     if char_class == 'warrior':
+        # Возвращает результат:
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(3, 5)}')
     if char_class == 'mage':
+        # Возвращает результат:
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(5, 10)}')
     if char_class == 'healer':
+        # Возвращает результат:
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(-3, -1)}')
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Документация модуля. Описывает работу классов и функций.
+    Размещается в верхней части файла (начиная с первой строки).
+    """
     if char_class == 'warrior':
+        # Возвращает результат:
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
+        # Возвращает результат:
         return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
     if char_class == 'healer':
+        # Возвращает результат:
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Это строка документирования."""
     if char_class == 'warrior':
+        # Возвращает результат:
         return (f'{char_name} применил специальное умение «Выносливость '
                 f'{80 + 25}»')
     if char_class == 'mage':
+        # Возвращает результат:
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
     if char_class == 'healer':
+        # Возвращает результат:
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Класс Test используется для демонстрации docstring.
+    После docstring в классе нужна пустая строка: методы класса должны
+    отделяться от предыдущего кода одной пустой строкой.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -46,6 +63,7 @@ def start_training(char_name: str, char_class: str) -> str:
           'special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
     cmd: str = None
+    # Strip off trailing and leading blank lines:
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd == 'attack':
@@ -58,8 +76,10 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Это строка документирования."""
     approve_choice: str = None
     char_class: str = None
+    # Strip off trailing and leading blank lines:
     while approve_choice != 'y':
         char_class = input('Введи название персонажа, '
                            'за которого хочешь играть: Воитель — warrior, '
@@ -79,7 +99,11 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main():
+def main() -> None:
+    """Класс Test используется для демонстрации docstring.
+    После docstring в классе нужна пустая строка: методы класса должны
+    отделяться от предыдущего кода одной пустой строкой.
+    """
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
@@ -89,6 +113,4 @@ def main():
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
-
-
-main()
+    
